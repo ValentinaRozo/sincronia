@@ -1,4 +1,4 @@
-# sincronia
+# SincronIA - Mobile
 
 A new Flutter project.
 
