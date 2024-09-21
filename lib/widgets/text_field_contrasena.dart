@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 
-class CustomTextField extends StatefulWidget {
+class CustomPasswordField extends StatefulWidget {
   final String labelText;
   final String hintText;
 
-  const CustomTextField({
+  const CustomPasswordField({
     Key? key,
     required this.labelText,
     required this.hintText,
   }) : super(key: key);
 
   @override
-  _CustomTextFieldState createState() => _CustomTextFieldState();
+  _CustomPasswordFieldState createState() => _CustomPasswordFieldState();
 }
 
-class _CustomTextFieldState extends State<CustomTextField> {
+class _CustomPasswordFieldState extends State<CustomPasswordField> {
   bool _isFocused = false;
+  bool _obscureText = true;
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +27,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
         });
       },
       child: TextFormField(
+        obscureText: _obscureText,
         decoration: InputDecoration(
           labelText: widget.labelText,
           labelStyle: const TextStyle(
@@ -62,6 +64,17 @@ class _CustomTextFieldState extends State<CustomTextField> {
               color: Color(0xFF0D47A1),
               width: 3.0,
             ),
+          ),
+          suffixIcon: IconButton(
+            icon: Icon(
+              _obscureText ? Icons.visibility_off : Icons.visibility,
+              color: const Color(0xFF0D47A1),
+            ),
+            onPressed: () {
+              setState(() {
+                _obscureText = !_obscureText;
+              });
+            },
           ),
         ),
       ),
