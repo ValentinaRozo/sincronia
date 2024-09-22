@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sincronia/widgets/button.dart';
 import 'package:sincronia/widgets/dropdown_recurrencia.dart';
+import 'package:sincronia/widgets/hour_picker.dart';
 import 'package:sincronia/widgets/text_field.dart';
 
 class CrearAlarma extends StatelessWidget {
@@ -37,16 +38,29 @@ class CrearAlarma extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  //Llenar el titulo del evento
                   const CustomTextField(
                     labelText: 'Título Evento',
                     hintText: 'Ingresa el nombre para tu alarma',
                   ),
                   const SizedBox(height: 20),
 
+                  //Llenar la hora inicial
                   const Text(
                     'Ingresa la hora inicial',
                     style: TextStyle(fontSize: 16, fontFamily: 'Roboto', color: Color(0xFF0D47A1), fontWeight: FontWeight.w700),
                   ),
+                  const SizedBox(height: 10),
+                  const Center(child: CustomHourPicker()),
+                  const SizedBox(height: 20),
+
+                  //Llenar la hora final
+                  const Text(
+                    'Ingresa la hora final',
+                    style: TextStyle(fontSize: 16, fontFamily: 'Roboto', color: Color(0xFF0D47A1), fontWeight: FontWeight.w700),
+                  ),
+                  const SizedBox(height: 10),
+                  const Center(child: CustomHourPicker()),
 
                   
                   const SizedBox(height: 20),
