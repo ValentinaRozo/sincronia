@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:sincronia/widgets/button.dart';
 import 'package:sincronia/widgets/dropdown_recurrencia.dart';
 import 'package:sincronia/widgets/hour_picker.dart';
+import 'package:sincronia/widgets/radio_buttons_etiqueta.dart';
+import 'package:sincronia/widgets/radio_buttons_notificaciones.dart';
 import 'package:sincronia/widgets/text_field.dart';
 
 class CrearAlarma extends StatelessWidget {
@@ -62,12 +64,14 @@ class CrearAlarma extends StatelessWidget {
                   const SizedBox(height: 10),
                   const Center(child: CustomHourPicker()),
 
-                  
+                  //Seleccionar etiqueta
                   const SizedBox(height: 20),
                   const Text(
                     'Etiqueta',
                     style: TextStyle(fontSize: 16, fontFamily: 'Roboto', color: Color(0xFF0D47A1), fontWeight: FontWeight.w700),
                   ),
+                  const SizedBox(height: 10),
+                  CustomRadioButton(),
                   
                   const SizedBox(height: 20),
                   const Text(
@@ -76,13 +80,25 @@ class CrearAlarma extends StatelessWidget {
                   ),
                   CustomDropdown(),
                   
+                  const SizedBox(height: 20),
+                  const Text(
+                    'Información sobre el evento',
+                    style: TextStyle(fontSize: 16, fontFamily: 'Roboto', color: Color(0xFF0D47A1), fontWeight: FontWeight.w700),
+                  ),
 
                   const SizedBox(height: 20),
                   const CustomTextField(
-                    labelText: 'Descripción del Evento',
-                    hintText: 'Ingresa la información de tu evento',
+                    labelText: 'Sobre mi alarma',
+                    hintText: 'Descripción del evento',
                   ),
-                  const SizedBox(height: 150),
+
+                  const SizedBox(height: 20),
+                  const Text(
+                    'Notificaciones',
+                    style: TextStyle(fontSize: 16, fontFamily: 'Roboto', color: Color(0xFF0D47A1), fontWeight: FontWeight.w700),
+                  ),
+                  NotificationRadioButtons(),
+                  const SizedBox(height: 100),
                 ],
               ),
             ),
