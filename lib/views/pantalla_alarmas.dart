@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sincronia/views/crear_alarma.dart';
+import 'package:sincronia/widgets/alarm_tile.dart';
 import 'package:sincronia/widgets/floating_button.dart';
 
 class PantallaAlarma extends StatelessWidget {
@@ -13,19 +14,27 @@ class PantallaAlarma extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: const Color(0xFFE3F2FD),
         centerTitle: true,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.menu),
-            color: const Color(0xFF0D47A1),
-            onPressed: () {
-              // Acción para el ícono de menú
-            },
-          )
-        ],
+        leading: IconButton(
+          icon: const Icon(Icons.menu),
+          color: const Color(0xFF0D47A1),
+          onPressed: () {
+          },
+        ),
       ),
 
       body: Stack(
         children: [
+          Align(
+            alignment: const Alignment(1, -0.6),
+            child: Opacity(
+              opacity: 0.9,
+              child: Image.asset(
+                'assets/fondo_puntos_SincronIA.png',
+                height: size.height * 0.20,
+              ),
+            ),
+          ),
+
           Align(
             alignment: Alignment.bottomLeft,
             child: Opacity(
@@ -38,27 +47,32 @@ class PantallaAlarma extends StatelessWidget {
             ),
           ),
 
-          const Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: EdgeInsets.all(16.0),
-                  child: Text(
-                          'Mis Alarmas',
-                          style: TextStyle(
-                            fontSize: 45,
-                            fontWeight: FontWeight.w500,
-                            color: Color(0xFF0D47A1),
-                            fontFamily: 'Roboto',
-                          ),
-                        )
-                ),
-              ],
+          SingleChildScrollView(
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.all(16.0),
+                    child: Text(
+                      'Mis Alarmas',
+                      style: TextStyle(
+                        fontSize: 45,
+                        fontWeight: FontWeight.w500,
+                        color: Color(0xFF0D47A1),
+                        fontFamily: 'Roboto',
+                      ),
+                    ),
+                  ),
+                  AlarmItem(),
+                ],
+              ),
             ),
           ),
+
         ],
       ),
+
       floatingActionButton: CustomFloatingButton(
         onPressed: () {
           Navigator.push(
