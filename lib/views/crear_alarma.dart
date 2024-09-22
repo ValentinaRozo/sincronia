@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sincronia/widgets/button.dart';
 import 'package:sincronia/widgets/dropdown_recurrencia.dart';
 import 'package:sincronia/widgets/hour_picker.dart';
+import 'package:sincronia/widgets/image_picker.dart';
 import 'package:sincronia/widgets/radio_buttons_etiqueta.dart';
 import 'package:sincronia/widgets/radio_buttons_notificaciones.dart';
 import 'package:sincronia/widgets/text_field.dart';
@@ -42,14 +43,14 @@ class CrearAlarma extends StatelessWidget {
                 children: [
                   //Llenar el titulo del evento
                   const CustomTextField(
-                    labelText: 'Título Evento',
+                    labelText: 'Título Evento*',
                     hintText: 'Ingresa el nombre para tu alarma',
                   ),
                   const SizedBox(height: 20),
 
                   //Llenar la hora inicial
                   const Text(
-                    'Ingresa la hora inicial',
+                    'Ingresa la hora inicial*',
                     style: TextStyle(fontSize: 16, fontFamily: 'Roboto', color: Color(0xFF0D47A1), fontWeight: FontWeight.w700),
                   ),
                   const SizedBox(height: 10),
@@ -67,7 +68,7 @@ class CrearAlarma extends StatelessWidget {
                   //Seleccionar etiqueta
                   const SizedBox(height: 20),
                   const Text(
-                    'Etiqueta',
+                    'Etiqueta*',
                     style: TextStyle(fontSize: 16, fontFamily: 'Roboto', color: Color(0xFF0D47A1), fontWeight: FontWeight.w700),
                   ),
                   const SizedBox(height: 10),
@@ -75,7 +76,7 @@ class CrearAlarma extends StatelessWidget {
                   
                   const SizedBox(height: 20),
                   const Text(
-                    'Recurrencia',
+                    'Recurrencia*',
                     style: TextStyle(fontSize: 16, fontFamily: 'Roboto', color: Color(0xFF0D47A1), fontWeight: FontWeight.w700),
                   ),
                   CustomDropdown(),
@@ -93,8 +94,11 @@ class CrearAlarma extends StatelessWidget {
                   ),
 
                   const SizedBox(height: 20),
+                  ImagePickerWidget(),
+
+                  const SizedBox(height: 20),
                   const Text(
-                    'Notificaciones',
+                    'Notificaciones*',
                     style: TextStyle(fontSize: 16, fontFamily: 'Roboto', color: Color(0xFF0D47A1), fontWeight: FontWeight.w700),
                   ),
                   NotificationRadioButtons(),
