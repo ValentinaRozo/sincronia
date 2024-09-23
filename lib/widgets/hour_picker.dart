@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CustomHourPicker extends StatefulWidget {
-  const CustomHourPicker({Key? key}) : super(key: key);
+  const CustomHourPicker({super.key});
 
   @override
   _CustomHourPickerState createState() => _CustomHourPickerState();
@@ -141,16 +141,16 @@ class _CustomHourPickerState extends State<CustomHourPicker> {
                               _isAM = index == 0;
                             });
                           },
-                          children: const [
-                            Text('AM'),
-                            Text('PM'),
-                          ],
                           color: Colors.grey,
                           selectedColor: const Color(0xFF4DB6AC),
                           fillColor: const Color(0xFFE0F7FA),
                           borderColor: const Color(0xFF4DB6AC),
                           selectedBorderColor: const Color(0xFF4DB6AC),
                           borderRadius: BorderRadius.circular(10.0),
+                          children: const [
+                            Text('AM'),
+                            Text('PM'),
+                          ],
                         ),
                       ],
                     ),

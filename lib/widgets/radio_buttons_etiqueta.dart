@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CustomRadioButton extends StatefulWidget {
+  const CustomRadioButton({super.key});
+
   @override
   _CustomRadioButtonState createState() => _CustomRadioButtonState();
 }

@@ -5,10 +5,10 @@ class CustomPasswordField extends StatefulWidget {
   final String hintText;
 
   const CustomPasswordField({
-    Key? key,
+    super.key,
     required this.labelText,
     required this.hintText,
-  }) : super(key: key);
+  });
 
   @override
   _CustomPasswordFieldState createState() => _CustomPasswordFieldState();
