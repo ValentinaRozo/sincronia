@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sincronia/views/crear_alarma.dart';
 import 'package:sincronia/widgets/alarm_tile.dart';
 import 'package:sincronia/widgets/floating_button.dart';
+import 'package:sincronia/widgets/custom_drawer.dart'; // Importa el CustomDrawer
 
 class PantallaAlarma extends StatelessWidget {
   const PantallaAlarma({super.key});
@@ -14,14 +15,19 @@ class PantallaAlarma extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: const Color(0xFFE3F2FD),
         centerTitle: true,
-        leading: IconButton(
-          icon: const Icon(Icons.menu),
-          color: const Color(0xFF0D47A1),
-          onPressed: () {
+        leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              icon: const Icon(Icons.menu),
+              color: const Color(0xFF0D47A1),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+            );
           },
         ),
       ),
-
+      drawer: const CustomDrawer(),
       body: Stack(
         children: [
           Align(
@@ -34,7 +40,6 @@ class PantallaAlarma extends StatelessWidget {
               ),
             ),
           ),
-
           Align(
             alignment: Alignment.bottomLeft,
             child: Opacity(
@@ -46,7 +51,6 @@ class PantallaAlarma extends StatelessWidget {
               ),
             ),
           ),
-
           SingleChildScrollView(
             child: Center(
               child: Column(
@@ -69,10 +73,8 @@ class PantallaAlarma extends StatelessWidget {
               ),
             ),
           ),
-
         ],
       ),
-
       floatingActionButton: CustomFloatingButton(
         onPressed: () {
           Navigator.push(
@@ -81,7 +83,6 @@ class PantallaAlarma extends StatelessWidget {
           );
         },
       ),
-
     );
   }
 }
