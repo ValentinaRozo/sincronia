@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class NotificationRadioButtons extends StatefulWidget {
+  const NotificationRadioButtons({super.key});
+
   @override
   _NotificationRadioButtonsState createState() => _NotificationRadioButtonsState();
 }

@@ -5,6 +5,8 @@ import 'package:sincronia/widgets/radio_buttons_notificaciones.dart';
 import 'package:sincronia/widgets/text_field.dart';
 
 class AlarmItem extends StatefulWidget {
+  const AlarmItem({super.key});
+
   @override
   _AlarmItemState createState() => _AlarmItemState();
 }

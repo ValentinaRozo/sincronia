@@ -6,11 +6,11 @@ class CustomButton2 extends StatefulWidget {
   final double width;
 
   const CustomButton2({
-    Key? key,
+    super.key,
     required this.text,
     required this.onPressed,
     this.width = 150,
-  }) : super(key: key);
+  });
 
   @override
   _CustomButton2State createState() => _CustomButton2State();
