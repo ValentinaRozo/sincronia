@@ -6,7 +6,7 @@ En esta aplicación se encuentran tres pantallas de la aplicación Móvil Sincro
 - Pantalla Crear Alarma
   
 A continuación se tiene una vista previa de las pantallas
-<img src=![WhatsApp Image 2024-09-22 at 7 31 56 PM](https://github.com/user-attachments/assets/56bf361d-fa17-43d4-bae5-7efe4f2dd331) alt="Pantalla de Registro" width="300"/>
+<img src="https://github.com/user-attachments/assets/56bf361d-fa17-43d4-bae5-7efe4f2dd331" alt="Pantalla de Registro" width="300"/>
 
 
 ![WhatsApp Image 2024-09-22 at 7 31 56 PM-2](https://github.com/user-attachments/assets/302d150c-bff4-4b89-be61-6f8ed6eb21b3)
