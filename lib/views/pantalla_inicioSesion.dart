@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:sincronia/views/pantalla_alarmas.dart';
-import 'package:sincronia/views/pantalla_inicioSesion.dart';
+import 'package:sincronia/views/pantalla_registro.dart';
 import 'package:sincronia/widgets/button.dart';
 import 'package:sincronia/widgets/button_2.dart';
 import 'package:sincronia/widgets/text_field.dart';
 import 'package:sincronia/widgets/text_field_contrasena.dart';
 
-class PantallaRegistro extends StatelessWidget {
-  const PantallaRegistro({super.key});
+class PantallaInicioSesion extends StatelessWidget {
+  const PantallaInicioSesion({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,19 +16,22 @@ class PantallaRegistro extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          Align(
-            alignment: Alignment.topCenter,
+          // Imagen de fondo superior
+          Positioned(
+            top: 0,
+            left: -50,
             child: Image.asset(
-              'assets/reloj_SincronIA.png',
-              height: size.height * 0.2,
+              'assets/fondo_superior_inicio_sesion.png',
+              height: size.height * 0.20,
               fit: BoxFit.contain,
             ),
           ),
+          // Imagen de fondo inferior
           Align(
             alignment: Alignment.bottomRight,
             child: Image.asset(
-              'assets/bottom_SincronIA.png',
-              height: size.height * 0.2,
+              'assets/fondo_inicio_sesion.png',
+              height: size.height * 0.25,
               fit: BoxFit.contain,
             ),
           ),
@@ -39,44 +42,61 @@ class PantallaRegistro extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SizedBox(height: size.height * 0.2),
+                    SizedBox(height: size.height * 0.18),
+                    // Logo SincronIA - Aumenta el tamaño del logo
+                    Image.asset(
+                      'assets/logo_SincronIA.png',
+                      height: size.height * 0.22,
+                      fit: BoxFit.contain,
+                    ),
+                    const SizedBox(height: 20),
+                    // Título "SincronIA"
                     const Text(
-                      'Registro',
+                      'SincronIA',
                       style: TextStyle(
-                        fontSize: 45,
-                        fontWeight: FontWeight.w500,
+                        fontSize: 40,
+                        fontWeight: FontWeight.w600,
                         color: Color(0xFF0D47A1),
                         fontFamily: 'Roboto',
                       ),
                     ),
                     const SizedBox(height: 20),
 
+                    // Campo de usuario
                     const CustomTextField(
-                      labelText: 'Nombre',
-                      hintText: 'Digita tu Nombre',
+                      labelText: 'Usuario',
+                      hintText: 'Digita tu nombre de usuario',
                     ),
                     const SizedBox(height: 20),
-                    const CustomTextField(
-                      labelText: 'Apellido',
-                      hintText: 'Digita tu Apellido',
-                    ),
-                    const SizedBox(height: 20),
-                    const CustomTextField(
-                      labelText: 'E-mail',
-                      hintText: 'Digita tu correo electrónico',
-                    ),
-                    const SizedBox(height: 20),
+
+                    // Campo de contraseña
                     const CustomPasswordField(
                       labelText: 'Contraseña',
                       hintText: 'Digita tu contraseña',
                     ),
-                    const SizedBox(height: 40),
+                    const SizedBox(height: 20),
 
-                    // Botón de "REGISTRARME"
+                    // Enlace de "Olvidé mi contraseña"
+                    Align(
+                      alignment: Alignment.center,
+                      child: GestureDetector(
+                        child: const Text(
+                          'Olvidé mi contraseña',
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Color(0xFF1976D2),
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 30),
+
+                    // Botón de "INICIAR SESIÓN"
                     CustomButton(
-                      text: 'REGISTRARME',
+                      text: 'INICIAR SESIÓN',
                       width: 250,
                       onPressed: () {
+                        // Navegar a la pantalla de alarmas
                         Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -85,16 +105,16 @@ class PantallaRegistro extends StatelessWidget {
                       },
                     ),
 
-                    // Botón de "Ya tengo una cuenta"
+                    // Botón de "REGISTRARME"
                     const SizedBox(height: 20),
                     CustomButton2(
-                      text: 'Ya tengo una cuenta',
+                      text: 'REGISTRARME',
                       onPressed: () {
+                        // Navegar a la pantalla de registro
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) =>
-                                  const PantallaInicioSesion()),
+                              builder: (context) => const PantallaRegistro()),
                         );
                       },
                       width: 250,
