@@ -4,6 +4,10 @@ En esta aplicación se encuentran tres pantallas de la aplicación Móvil Sincro
 - Pantalla de Registro
 - Pantalla Mis Alarmas
 - Pantalla Crear Alarma
+- Pantalla de Inicio de Sesión
+- Menú desplegable
+- Pantalla de Sueño
+- Pantalla configuración
   
 A continuación se tiene una vista previa de las pantallas
 
